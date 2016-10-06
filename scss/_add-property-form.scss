@@ -1,10 +1,6 @@
 .UpdateProperty-form,
 .addProperty-form {
-    background:$p42-background;
     @extend %layout;
-    box-shadow: 0 0 7px rgba($black , 0.22);
-    padding: 20px 10px;
-    margin: 42px auto;
 
     .error {
         @extend %listreset;
@@ -57,19 +53,16 @@
     }
     
     .main-form {
+        background: rgba($p42-background, 0.8);
+        box-shadow: 0 0 7px rgba($black , 0.22);
+        padding: 20px 10px;
         @extend %layout;
-        width: 90%;
-        margin: 0 auto;
+        @extend %container;
+        margin: 0 auto 30px;
 
-        @include media('<widescreen'){
+        @include media('<desktop'){
             width: 100%;
         }
-    }
-    .tips {
-        @extend %layout;
-        @extend .pull-left;
-        width: 25%;
-        display: none;
     }
     .image-uploading-area{
 		@extend %listreset;
@@ -150,6 +143,10 @@
                 
                 @include media('<tablet'){
                     @include squar(100%, 90px);
+                }
+
+                &:hover{
+                    &:after{ color: $orange;}
                 }
                 
                 &:after{
@@ -285,8 +282,19 @@
                 padding: 0;
                 @extend %full-width;
             }
+            label {
+                width: 12.2%;
+
+                @include media('<desktop'){
+                    width: 100%;
+                }
+            }
             .input-holder {
-                width: calc(95% - 120px);
+                width: 80.5%;
+
+                @include media('<desktop'){
+                    width: 100%;
+                }
             }
         }
 
@@ -306,15 +314,16 @@
         label {
             color: $dark-grey;
             opacity: 0.80;
-            font-family: $open-sans;
             @extend %text-capital;
-            width: 120px;
+            width: 25%;
             @include font(13,16);
             padding: 7px 0 0;
 
-            @include media('<tablet'){
+            @include media('<desktop'){
                 @include font(12,15);
-                width: 90px;
+                width: 100%;
+                display: block;
+                padding: 0 0 10px;
             }
 
             &.required-field {
@@ -327,11 +336,12 @@
         }
     }
     .input-holder {
-        width: calc(90% - 120px);
+        width: 60%;
         padding: 2px;
 
-        @include media('<tablet'){
-            width: calc(95% - 90px);
+        @include media('<desktop'){
+            width: 100%;
+            padding: 0;
         }
     }
     .fake-select {
@@ -345,9 +355,9 @@
     input[type="text"],input[type="tel"],input[type="password"],input[type="number"],input[type="email"]{
         border: 0;
         width: 100%;
-        padding: 6px;
+        padding:10px 6px;
         @include font(13,16);
-        height: 28px;
+        height: 40px;
         width: 100%;
         
         @include media('<tablet'){
@@ -360,7 +370,7 @@
         }
     }
     textarea {
-        height: 90px;
+        height: 100px;
         resize: none;
     }
     input[type="submit"]{
@@ -383,7 +393,6 @@
     }
     .extra-features {
         @include font(16,18);
-        font-family: $open-sans;
         color: $white;
         font-weight: 700;
         background: $p42-color;
@@ -406,7 +415,6 @@
         @extend %listreset;
         max-width: 520px;
         margin: 30px auto 10px;
-        font-family: $open-sans;
         @extend %text-capital;
         @include align-reset(top,16,20);
 
@@ -485,28 +493,15 @@
     }
     .list-extraFeatures {
         background: $p42-background;
+        @extend %layout;
         @include align-reset(top, 13, 16);
-        border: 1px solid rgba($p42-color, 0.5);
-        padding: 5px 0;
-        border-radius: 4px;
-        position: relative;
-        margin: 10px 0 0;
-
-        &:after {
-            position: absolute;
-            top: -10px;
-            left: 80px;
-            border: 5px solid transparent;
-            border-bottom: 5px solid $p42-color;
-            content: '';
-        }
 
         .col {
             width: 50%;
             padding: 0 5px;
             margin: 0 0 20px;
 
-            @include media('<tablet'){
+            @include media('<desktop'){
                 width: 100%;
                 display: block;
                 overflow: hidden;
@@ -515,15 +510,28 @@
 
             .layout { margin: 0 -5px 10px;}
             .layout-holder {
-                padding: 0 5px;
+                padding: 0 5px 5px;
+                min-height: 45px;
+                white-space: nowrap;
 
-                @include media('<widescreen'){
-                    width: 100%;
+                &:after {
+                    height: 45px;
+                    content: '';
+                    width: 1px;
+                    margin: 0 0 0 -5px;
+                    overflow: hidden;
+                    @include align(middle);
+                }
+                .input-holder,
+                label {
+                    white-space: normal;
+                    @include align(middle);
                 }
             }
         }
         label {
-            padding: 5px;
+            width: 50%;
+            padding: 0;
 
             &:after { @extend %hidden;}
         }
@@ -533,16 +541,13 @@
             height: 28px;
         }
         .input-holder {
-            
-            input[type="radio"],input[type="checkbox"]{
-                margin: 6px 0 0;
-            }
+            width: 50%;
         }
         .feature-heading {
             display: block;
             padding: 5px;
             @extend %text-center;
-            background: rgba($p42-color, 0.5);
+            background: $darken-grey;
             color: $white;
             margin: 0 0 10px;
         }
@@ -560,6 +565,8 @@
         }
     }
     .thankYou-message {
+        background: rgba($p42-background, 0.8);
+        box-shadow: 0 0 7px rgba($black , 0.22);
         @extend %text-center;
         @extend %container;
         padding: 15px 10px;

@@ -43,7 +43,6 @@
         @include align-reset(top,18,22);
         @extend %text-upparcase;
         @extend %text-center;
-        font-family: $open-sans;
         font-weight: 700;
 
         @include media('<tvscreen'){
@@ -81,7 +80,7 @@
                         color: $p42-color;
                     }
                     &.rejected {
-                        color: lighten($red, 30%);
+                        color: lighten($red, 10%);
                     }
                     &.expired {
                         color: #cf8511;
@@ -211,7 +210,6 @@
     .sorting-filtering {
         @extend %listreset;
         @include align-reset(top, 13,16);
-        font-family: $open-sans;
         margin: 0 -10px;
         @extend %text-center;
 
@@ -259,7 +257,6 @@
         display: block;
         @extend %text-center;
         color: $white;
-        font-family: $open-sans;
         @extend %text-upparcase;
         @include font(21,25);
         background: $p42-default-grey;
@@ -277,7 +274,6 @@
             display: block;
             @include align-reset(top, 14,17);
             font-weight: 700;
-            font-family: $open-sans;
             color: $p42-default-grey;
             @extend %layout;
             position: relative;
@@ -287,7 +283,7 @@
             }
 
             &.t-h{
-                background: $p42-color;
+                background: $dim-grey;
                 color: $white;  
                 
                 .customCheckbox {

@@ -85,7 +85,6 @@
     }
     .heading {
       color: $p42-color;
-      font-family: $open-sans;
       @include font(21,24);
       font-weight: 700;
       margin: 0 0 10px;
@@ -143,7 +142,6 @@
     h1 {
       @extend %text-left;
       font-weight: 700;
-      font-family: $open-sans;
       @include font(27,30);
       margin: 0 0 15px;
 
