@@ -1,25 +1,7 @@
-jQuery(window).load(function(){
-	$('body').removeClass('loading-page');
-});
-
 $(document).ready(function() {
-  if (screen.width < 768){
-		$('.call-agent-btn').each(function(){
-			var mobileNumber = $(this).attr('data-tel');
-			$(this).attr('href', 'tel:'+mobileNumber)
-		});
-	}
-	if($('.publicProperty-post, .publicAgent-post').length == 0){
-		$('.propertyNotFound').removeClass('hidden');
-	}
 	$('.addPro-type:first').trigger('change');
 	$('.registration-form').find('.role-listing').hide();
 
-	if($('.agent-slide').length > 5){
-		$('.agent-societies').find('.btn-prev, .btn-next').css({
-			'display':'block'
-		});
-	}
 	if (screen.width < 1024){
 		$('body').removeClass('sideBar-active');
 		$(document).on('click', '.sideBar-links li', function(){
@@ -155,23 +137,6 @@ $(document).on('click', '.propertyImage-slider-btn-next, .propertyImage-slider-b
 	 }
 });
 
-$(document).on('click', '.navigation-toggler', function(){
-	$('html').toggleClass('nav-active');
-});
-
-$(document).on('click', '.filters-links-opener', function(){
-	$(this).closest('li').toggleClass('active');
-
-	if($(this).closest('li').hasClass('active')){
-		$(this).closest('li').find('.slide').slideDown();
-	}
-	else {
-		$(this).closest('li').find('.slide').slideUp();
-	}
-});
-$(document).on('click', '.aside-opener-filters', function(){
-	$('#aside').slideToggle('active');
-});
 
 $(document).on('focusin', '.PriceField', function(){
 	$('.calculatedPrice').removeClass('priceShow');
@@ -181,14 +146,6 @@ $(document).on('focusout', '.PriceField', function(){
 	$('.calculatedPrice').removeClass('priceShow');
 });
 
-$(document).on('click', '.call-agent-btn', function(){
-	var phoneNumber = $(this).attr('data-tel');
-	var placeToGo = $('.call-agent').find('p').text(phoneNumber);
-
-	if (screen.width < 768){
-		$('#wrapper').removeClass('fancy-overlay');
-	}
-});
 
 function previewAddPropertyImg(file, target)
  {
