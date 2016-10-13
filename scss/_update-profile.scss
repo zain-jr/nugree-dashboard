@@ -521,20 +521,21 @@
     
     .packetData-list {
         margin: 0 -5px;
+        white-space: nowrap;
 
         li {
-            width: 20%;
+            width: 19%;
             padding: 0 5px 10px;
 
             @include media('<widescreen'){
-                width: 25%;
+                width: 24%;
                 padding: 0 3px 10px;
             }
             @include media('<desktop'){
-                width: 33.33%;
+                width: 33%;
             }
             @include media('<tablet'){
-                width: 50%;
+                width: 48%;
             }
         }
     }
