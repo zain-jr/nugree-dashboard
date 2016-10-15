@@ -3,8 +3,8 @@
     @extend %layout;
     box-shadow: 0 0 7px rgba($black , 0.22);
     padding: 20px 10px;
-    margin: 42px auto;
-    width: 85%;
+    margin: 42px  auto 0;
+    width: 95%;
 
     .global-success {
         margin: -20px -10px 0;
@@ -25,7 +25,7 @@
         input[type="text"],input[type="tel"],input[type="password"],input[type="number"],input[type="email"]{
             border: 0;
             width: 100%;
-            padding: 8px;
+            padding:11px 8px;
             @include font(13,16);
             height: 40px;
             width: 100%;
@@ -215,7 +215,7 @@
             color: $dark-grey;
             opacity: 0.80;
             @extend %text-capital;
-            width: 140px;
+            width: 100px;
             @include font(13,16);
             padding: 7px 5px 0 0;
 
@@ -512,6 +512,7 @@
         overflow-y: auto;
         background: $p42-background;
         box-shadow: 0 0 23px rgba($black, 0.2) inset;
+        margin: 20px 0;
         
         @include media('<tablet'){
             padding: 0;
