@@ -1,4 +1,31 @@
-.UpdateProperty-form,
+$breakpoints: (
+  'xs-phone': 320px,
+  'phone': 480px,
+  'tablet': 768px,
+  'desktop': 1024px,
+  'widescreen': 1200px,
+  'tvscreen':1600px,
+);
+
+// keywords
+$media-expressions: (
+  'screen': 'screen',
+  'print': 'print',
+  'handheld': 'handheld',
+  'landscape': '(orientation: landscape)',
+  'portrait': '(orientation: portrait)',
+  'retina2x': '(-webkit-min-device-pixel-ratio: 1.5), (min-resolution: 144dpi)',
+  'retina3x': '(-webkit-min-device-pixel-ratio: 2.5), (min-resolution: 240dpi)'
+);
+
+// ligatured operators ≥ ≤
+
+@import 'vendors/include-media';
+
+@import 'base/variables';
+@import 'base/mixins';
+@import 'base/helpers';
+
 .addProperty-form {
     @extend %layout;
 
@@ -35,9 +62,23 @@
             }
         }
     }
-    .select2-container {
-        width:  100% !important;
+    .select2-container, .select2-drop, .select2-search, .select2-search input {
+        border: 0;
     }
+    .select2-container .select2-choice {
+        height: 40px;
+        line-height: 40px;
+    }
+    .select2-container .select2-choice .select2-arrow {
+        width: 27px;
+        background: $p42-color;
+        border-color: $p42-color;
+      }
+      .select2-container .select2-choice .select2-arrow b::after {
+        border: 5px solid transparent;
+        border-top: 5px solid $black;
+        margin: -3px 0 0 -5px;
+      }
 
     .add-form-holder { @extend %layout;}
 
@@ -58,7 +99,6 @@
         padding: 20px 10px;
         @extend %layout;
         @extend %container;
-        width: 95%;
         margin: 0 auto 30px;
 
         @include media('<desktop'){
@@ -477,6 +517,10 @@
                     opacity: 0.80;
                     padding: 9px 0 0;
                     cursor: default;
+
+                    @include media('<desktop'){
+                        padding: 0 0 10px;
+                    }
                 }
             }
 
