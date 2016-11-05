@@ -750,7 +750,8 @@ h1 {
   left: 10px;
   bottom: 0;
   width: 15px;
-  border: 1px solid $p42-default-grey;
+  border: 2px solid $p42-default-grey;
+  background: $p42-default-grey;
   cursor: pointer;
   border-radius: 0 20px 20px 0;
 
@@ -802,7 +803,7 @@ h1 {
     top: 50%;
     left: 50%;
     border: 5px solid transparent;
-    border-left: 5px solid $p42-default-grey;
+    border-left: 5px solid $white;
     content: '';
     margin: -3px 0 0 -2px;
   }
