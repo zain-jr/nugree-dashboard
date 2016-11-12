@@ -755,6 +755,10 @@ h1 {
   cursor: pointer;
   border-radius: 0 20px 20px 0;
 
+  @include media('<desktop'){
+    background: transparent;
+  }
+
   &.Main {
     @include media('<desktop'){
       left: 10px;
